@@ -2,7 +2,7 @@
 		  const element2 = document.getElementById("hiddenElement");
           let width = 0 , intervalIds = []  ;
 		  let str_1="https://ws.api.cnyes.com/ws/api/v1/charting/history?resolution=1&symbol=TWS:", 
-			  str_2="2449", 
+			  str_2="5347", 
 			  str_3=":STOCK&quote=1" 
 			  ajaxURL= str_1 + str_2 + str_3
 			  s01_val="0" ; 				  
