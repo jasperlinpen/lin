@@ -688,7 +688,7 @@
                };  
 			   
 
-          function getYSMDATA(url, method = 'GET') {
+          function getYSMDATA(url="https://marketinfo.api.cnyes.com/mi/api/v1/financialIndicator/revenue/TWS:2330:STOCK?resolution=Y&year=5&to=1561305600", method = "GET") {
  
          fetch(url, {
                 method: method,
