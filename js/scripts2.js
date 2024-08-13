@@ -1,6 +1,6 @@
           const element1 = document.getElementById("myBar1");
 		  const element2 = document.getElementById("hiddenElement");
-		  const url = "https://statementdog.com/api/v2/fundamentals/2330/2019/2024/cf?qbu=true&qf=analysis&_=1723190960067"	;	  
+		  const url = "https://marketinfo.api.cnyes.com/mi/api/v1/financialIndicator/revenue/TWS:2330:STOCK?resolution=Y&year=5&to=1561305600"	;	  
           let width = 0 , intervalIds = []  ;
 		  let str_1="https://ws.api.cnyes.com/ws/api/v1/charting/history?resolution=1&symbol=TWS:", 
 			  str_2="5347", 
