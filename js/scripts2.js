@@ -691,8 +691,7 @@
           function getYSMDATA(url, method = 'GET') {
  
          fetch(url, {
-                method: method,
-                headers: {}
+                method: method
          })
         .then(response => {
          if (!response.ok) {
