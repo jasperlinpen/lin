@@ -3,16 +3,16 @@
           let width = 0 , intervalIds = []  ;
 		  let str_1="https://ws.api.cnyes.com/ws/api/v1/charting/history?resolution=1&symbol=TWS:", 
 			  str_2="5347", 
-			  str_3=":STOCK&quote=1" 
-			  ajaxURL= str_1 + str_2 + str_3
+			  str_3=":STOCK&quote=1" ,
+			  ajaxURL= str_1 + str_2 + str_3 ,
 			  s01_val="0" ; 				  
           window.addEventListener('load',function(){
 	    // document.getElementById('hiddenElement').classList.add('displayElementYN');
 		  if (!element2.style.displayElementYN ) { 
-				console.log("NNN") ;
+			  // console.log("NNN") ;
 			  //  element2.classList.add('displayElementYN');
 				element2.style.display = 'none';
-				console.log(element2.style.display) ;
+			  // console.log(element2.style.display) ;
 			   }
             else 
 			{ 
@@ -162,7 +162,7 @@
                   $.each(data,function(key1,item1){
                      if (key1 === 'data') {
                    	//  $('ul').append('<li>'+item1+'</li>');
-                    var itemData = item1 , span_rpt="<span class='span_rpt'>(<button onclick='showElement();'>M</button>)</span><span class='span_rpt'>(<a href='./revenueS.json'>S</a>)</span><span class='span_rpt'>(<a href='./revenueY.json'>Y</a>)</span>" ; 	          
+                    var itemData = item1 , span_rpt="<span class='span_rpt'>(<button onclick='getYSMDATA();'>M</button>)</span><span class='span_rpt'>(<a href='./revenueS.json'>S</a>)</span><span class='span_rpt'>(<a href='./revenueY.json'>Y</a>)</span>" ; 	          
                     $.each(itemData,function(key2,item2){
                     	if (key2  === 'quote' ) {
                     		  var itemData2 = item2;
@@ -686,7 +686,53 @@
                 }); 
                };  
 			   
+
+          function getYSMDATA() {
+               /*
+                if (firstVisit === false) {
+                   document.getElementById("s01").addEventListener("change", myFunction);   
+                } 
+               */   
+               console.log('TPass1');			   
+                $.getJSON('https://statementdog.com/api/v2/fundamentals/2330/2019/2024/cf?qbu=true&qf=analysis&_=1723190960067',function(data){
+                     console.log('TPass2');	
+                  $.each(data,function(key1,item1){
+					console.log('TPass30');	
+					console.log(key1);	
+                     if (key1 === 'common') {
+                   	//  $('ul').append('<li>'+item1+'</li>');
+                    var itemData = item1; 	  
+					console.log('TPass31');	
+                    $.each(itemData,function(key2,item2){
+						 console.log('TPass3');	
+                    	if (key2  === 'Revenue' ) {
+                    		  var itemData2 = item2;
+                    		  var itemDataTemp ;
+                    		//  Dowjon - starting
+                    		  $.each(itemData2,function(key3,item3){
+                            if (key3 === 'data') {
+                 	           itemDataTemp = item3 ;
+			   /****		
+			                    console.log("@@@@") ;
+            					$.each(itemDataTemp,function(i,val) {
+                                console.log ( i + val );
+                                });
+               // ****/
+                  	        }
+
+
+                     }) ; 
+                    		//  Dowjon - Ending  
+		                    		                         		              		
+                    	}
+                     });               
+                  }
+                 });
+                }); 
+               };  
 			   
+
+		   
 	    function showElement() {
 			while(intervalIds.length){
                   clearInterval(intervalIds.pop());
@@ -694,8 +740,12 @@
 			 if (element2.style.display == "none" ) 
                  element2.style.display = "block"  // Change display to block to make it visible
              else
-      		     element2.style.display = "none" ;	
-            console.log(element2.style.display) ;
+      		     element2.style.display = "none" ;
+			 
+             
+            $("#hiddenElement").html(item3 + span_rpt); 
+			 
+        //    console.log(element2.style.display) ;
 		//	console.log (element.style.display) ;
 
 	    }		 
