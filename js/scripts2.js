@@ -693,8 +693,8 @@
          fetch(url, {
                 method: method,
                 headers: {
-                'Content-Type': '',
-                'Accept': '',}
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'}
          })
         .then(response => {
          if (!response.ok) {
