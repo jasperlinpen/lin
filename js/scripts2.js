@@ -688,7 +688,7 @@
                };  
 			   
 
-          function getYSMDATA(url="https://marketinfo.api.cnyes.com/mi/api/v1/financialIndicator/revenue/TWS:2330:STOCK?resolution=Y&year=5&to=1561305600", method = "GET") {
+          function getYSMDATA(url="https://statementdog.com/api/v2/fundamentals/2330/2019/2024/cf?qbu=true&qf=analysis&_=1723190960067", method = "GET") {
  
          fetch(url, {
                 method: method,
