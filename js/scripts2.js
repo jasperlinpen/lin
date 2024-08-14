@@ -692,6 +692,7 @@
  
          fetch(url, {
                 method: method,
+				mode: 'no-cors',
                 headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'}
